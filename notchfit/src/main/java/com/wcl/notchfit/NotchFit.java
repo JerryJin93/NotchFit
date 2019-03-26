@@ -134,4 +134,14 @@ public class NotchFit {
         });
     }
 
+    /**
+     * To determine the device has notch or not.
+     *
+     * @param activity Activity.
+     * @return True if the device has notch, false otherwise.
+     */
+    public static boolean hasNotch(Activity activity) {
+        return NotchFactory.getInstance().getNotch().hasNotch(activity);
+    }
+
 }

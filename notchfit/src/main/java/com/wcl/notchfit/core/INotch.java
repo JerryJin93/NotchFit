@@ -22,4 +22,12 @@ public interface INotch {
      * @param onNotchCallBack 刘海参数回调
      */
     void obtainNotch(Activity activity, OnNotchCallBack onNotchCallBack);
+
+    /**
+     * To determine the device has notch or not.
+     *
+     * @param activity Activity.
+     * @return True if the device has notch, false otherwise.
+     */
+    boolean hasNotch(Activity activity);
 }

@@ -174,4 +174,9 @@ public abstract class AbstractNotch implements INotch{
         }
         return notchSize;
     }
+
+    @Override
+    public boolean hasNotch(Activity activity) {
+        return isNotchEnable_O(activity) || isNotchEnable_P(activity);
+    }
 }

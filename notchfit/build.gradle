@@ -2,9 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
-
-
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
@@ -14,18 +11,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    buildToolsVersion '28.0.3'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 
@@ -46,4 +42,4 @@ ext{
     descVersion = ""
 }
 //apply from: 'https://raw.githubusercontent.com/wcl9900/jcenter/master/publishJCenter.gradle'
-apply from: 'https://gitee.com/wcl9900/jcenter/raw/master/publishJCenter.gradle'//码云托管
+// apply from: 'https://gitee.com/wcl9900/jcenter/raw/master/publishJCenter.gradle'//码云托管
