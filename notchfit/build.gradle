@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.JerryJin93'
 
 android {
     compileSdkVersion 28
@@ -26,7 +29,7 @@ dependencies {
 
 
 ext{
-    versionName = "1.4"//版本号
+    versionName = "1.5"//版本号
     siteUrl = 'https://github.com/wcl9900/NotchFit'    // project homepage
     gitUrl = 'https://github.com/wcl9900/NotchFit.git' // project git
 

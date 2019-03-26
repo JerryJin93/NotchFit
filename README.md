@@ -9,9 +9,10 @@
 # 引入方式
     Gradle
     repositories {
-        jcenter()
+        ...
+        maven { url 'https://jitpack.io' }
     }
-    compile 'com.wcl.notchfit:notchfit:1.4'
+    compile 'com.wcl.notchfit:notchfit:1.5'
     
 # 使用方式
 
