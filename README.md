@@ -12,7 +12,7 @@
         ...
         maven { url 'https://jitpack.io' }
     }
-    compile 'com.wcl.notchfit:notchfit:1.5'
+    compile 'com.github.JerryJin93:notchfit:1.5'
     
 # 使用方式
 
