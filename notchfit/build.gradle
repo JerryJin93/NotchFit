@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.6"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -29,7 +29,7 @@ dependencies {
 
 
 ext{
-    versionName = "1.5"//版本号
+    versionName = "1.6"//版本号
     siteUrl = 'https://github.com/wcl9900/NotchFit'    // project homepage
     gitUrl = 'https://github.com/wcl9900/NotchFit.git' // project git
 

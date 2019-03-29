@@ -20,6 +20,7 @@ import java.util.List;
  * Created by wangchunlong on 2018/10/23.
  */
 public abstract class AbstractNotch implements INotch{
+    private static final String deviceManufacturer = DeviceUtils.getManufacturer();
     private NotchProperty notchProperty;
 
     @Override
@@ -102,18 +103,18 @@ public abstract class AbstractNotch implements INotch{
         }
         else {
             notchProperty.setNotchEnable(isNotchEnable_O(activity));
-            LogUtils.i(notchProperty.getManufacturer()+" O notch enable: "+notchProperty.isNotchEnable());
+            LogUtils.i(deviceManufacturer+" O notch enable: "+notchProperty.isNotchEnable());
             if(notchProperty.isNotchEnable()) {
                 notchSize = getNotchSize_O(activity);
                 if(notchSize != null && notchSize.length > 1) {
-                    LogUtils.i(notchProperty.getManufacturer() + " O notch size: " + "width> " + notchSize[0] + " height> " + notchSize[1]);
+                    LogUtils.i(deviceManufacturer + " O notch size: " + "width> " + notchSize[0] + " height> " + notchSize[1]);
                 }
             }
         }
 
         if(notchProperty.isNotchEnable()){
             if(notchSize == null || notchSize.length != 2) {
-                throw new RuntimeException(notchProperty.getManufacturer()+" notch args get error");
+                throw new RuntimeException(deviceManufacturer+" notch args get error");
             }
             notchProperty.setNotchWidth(notchSize[0]);
             notchProperty.setNotchHeight(notchSize[1]);
@@ -150,10 +151,10 @@ public abstract class AbstractNotch implements INotch{
     protected boolean isNotchEnable_P(Activity activity){
         DisplayCutout displayCutout = activity.getWindow().getDecorView().getRootWindowInsets().getDisplayCutout();
         if(displayCutout == null || displayCutout.getBoundingRects() == null || displayCutout.getBoundingRects().size() == 0){
-            LogUtils.i(notchProperty.getManufacturer()+" P notch enable: false");
+            LogUtils.i(deviceManufacturer+" P notch enable: false");
             return false;
         }
-        LogUtils.i(notchProperty.getManufacturer()+" P notch enable: true");
+        LogUtils.i(deviceManufacturer+" P notch enable: true");
         return true;
     }
     /**
@@ -165,12 +166,14 @@ public abstract class AbstractNotch implements INotch{
     protected int[] getNotchSize_P(Activity activity){
         int[] notchSize = new int[]{0,0};
         DisplayCutout displayCutout = activity.getWindow().getDecorView().getRootWindowInsets().getDisplayCutout();
-        List<Rect> boundingRects = displayCutout.getBoundingRects();
-        if(boundingRects.size() != 0){
-            Rect rect = boundingRects.get(0);
-            notchSize[0] = rect.width();
-            notchSize[1] = rect.height();
-            LogUtils.i(notchProperty.getManufacturer() + " O notch size: " + "width> " + notchSize[0] + " height>" + notchSize[1]);
+        if (displayCutout != null) {
+            List<Rect> boundingRects = displayCutout.getBoundingRects();
+            if(boundingRects.size() != 0){
+                Rect rect = boundingRects.get(0);
+                notchSize[0] = rect.width();
+                notchSize[1] = rect.height();
+                LogUtils.i(deviceManufacturer + " O notch size: " + "width> " + notchSize[0] + " height>" + notchSize[1]);
+            }
         }
         return notchSize;
     }
