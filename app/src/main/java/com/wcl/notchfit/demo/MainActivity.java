@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
 
         findViewById(R.id.btn_notch_translucent).setOnClickListener(this);
+        findViewById(R.id.btn_notch_translucent_status_bar_only).setOnClickListener(this);
         findViewById(R.id.btn_notch_fullscreen).setOnClickListener(this);
         findViewById(R.id.btn_notch_custom).setOnClickListener(this);
 
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btn_notch_translucent:
                 startActivity(new Intent(this, NotchTranslucentActivity.class));
+                break;
+            case R.id.btn_notch_translucent_status_bar_only:
+                startActivity(new Intent(this, NotchTranslucentStatusBarOnlyActivity.class));
                 break;
             case R.id.btn_notch_translucent_unuse:
                 startActivity(new Intent(this, UnUseNotchTranslucentActivity.class));

@@ -7,6 +7,7 @@ import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 
 /**
@@ -63,6 +64,23 @@ public class ActivityUtils {
         activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
+    }
+
+    /**
+     * 沉浸式状态栏，只限于顶部状态栏，不包括底部Navigation Bar
+     *
+     * @param activity 需要设置的activity
+     */
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public static void setTranslucentOnlyForStatusBar(Activity activity) {
+        if (activity == null) {
+            return;
+        }
+        Window window = activity.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(Color.TRANSPARENT);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 
     /**

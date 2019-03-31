@@ -14,6 +14,10 @@ public enum NotchScreenType {
      */
     TRANSLUCENT,
     /**
+     * 沉浸式显示，只限于顶部状态栏，不包括底部Navigation Bar
+     */
+    TRANSLUCENT_STATUS_BAR_ONLY,
+    /**
      * 用户自定义activity显示样式
      */
     CUSTOM

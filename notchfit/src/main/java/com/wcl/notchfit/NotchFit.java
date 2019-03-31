@@ -45,6 +45,8 @@ public class NotchFit {
         }
         else if(notchScreenType == NotchScreenType.TRANSLUCENT){
             ActivityUtils.setTranslucent(activity);
+        } else if (notchScreenType == NotchScreenType.TRANSLUCENT_STATUS_BAR_ONLY) {
+            ActivityUtils.setTranslucentOnlyForStatusBar(activity);
         }
 
         NotchFactory.getInstance().getNotch().obtainNotch(activity, new OnNotchCallBack() {

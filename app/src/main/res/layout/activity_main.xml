@@ -16,6 +16,13 @@
         android:text="沉浸式适配" />
 
     <Button
+        android:id="@+id/btn_notch_translucent_status_bar_only"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="沉浸式适配，不包括底部Navigation Bar" />
+
+    <Button
         android:id="@+id/btn_notch_fullscreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

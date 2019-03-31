@@ -51,6 +51,7 @@
         <activity
             android:name=".NotchCustomActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".NotchTranslucentStatusBarOnlyActivity" />
     </application>
 
 </manifest>
