@@ -29,7 +29,7 @@ dependencies {
 
 
 ext{
-    versionName = "1.8"//版本号
+    versionName = "1.9"//版本号
     siteUrl = 'https://github.com/wcl9900/NotchFit'    // project homepage
     gitUrl = 'https://github.com/wcl9900/NotchFit.git' // project git
 

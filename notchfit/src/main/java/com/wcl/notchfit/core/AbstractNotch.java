@@ -180,6 +180,10 @@ public abstract class AbstractNotch implements INotch{
 
     @Override
     public boolean hasNotch(Activity activity) {
-        return isNotchEnable_O(activity) || isNotchEnable_P(activity);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            return isNotchEnable_P(activity);
+        } else {
+            return isNotchEnable_O(activity);
+        }
     }
 }
